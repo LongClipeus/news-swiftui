@@ -2,7 +2,7 @@
 //  News_SwiftUIApp.swift
 //  News-SwiftUI
 //
-//  Created by Hung, Nguyen Van on 16/05/2023.
+//  Created by Long Le Van on 16/05/2023.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct News_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreen()
         }
     }
 }

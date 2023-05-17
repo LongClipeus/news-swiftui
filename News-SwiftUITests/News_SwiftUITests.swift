@@ -2,7 +2,7 @@
 //  News_SwiftUITests.swift
 //  News-SwiftUITests
 //
-//  Created by Hung, Nguyen Van on 16/05/2023.
+//  Created by Long Le Van on 16/05/2023.
 //
 
 import XCTest
