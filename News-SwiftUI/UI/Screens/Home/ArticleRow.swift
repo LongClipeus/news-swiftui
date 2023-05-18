@@ -15,7 +15,7 @@ struct ArticleRow: View {
 
     var body: some View {
         NavigationLink {
-            ReadingScreen()
+            ReadingScreen(article: DataUtils.articleExample)
         } label: {
             HStack {
                 buildImagePreview(article: article)

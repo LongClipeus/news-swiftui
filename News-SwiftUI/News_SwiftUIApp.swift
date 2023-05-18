@@ -11,7 +11,9 @@ import SwiftUI
 struct News_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeScreen()
+            NavigationView{
+                HomeScreen(articles: [DataUtils.articleExample])
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HomeScreen: View {
 
-    @State private var articles = [Article]()
+    let articles: [Article]
 
     var body: some View {
         List(articles, rowContent: ArticleRow.init)
@@ -19,6 +19,6 @@ struct HomeScreen: View {
 
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreen()
+        HomeScreen(articles: [DataUtils.articleExample])
     }
 }
