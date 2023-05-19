@@ -12,7 +12,7 @@ struct News_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                HomeScreen(articles: [DataUtils.articleExample])
+                HomeScreen(newsList: [DataUtils.newsExample])
             }
         }
     }

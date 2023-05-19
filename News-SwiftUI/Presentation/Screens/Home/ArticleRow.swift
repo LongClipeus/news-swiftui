@@ -11,21 +11,21 @@ import SwiftUI
 struct ArticleRow: View {
 
     /// The article this row should be showing.
-    let article: Article
+    let news: News
 
     var body: some View {
         NavigationLink {
             ReadingScreen(article: DataUtils.articleExample)
         } label: {
             HStack {
-                buildImagePreview(article: article)
-                buildContent(article: article)
+                buildImagePreview(news: news)
+                buildContent(news: news)
             }
         }
     }
 
-    private func buildImagePreview(article: Article) -> some View {
-        AsyncImage(url: article.thumbnail) { phase in
+    private func buildImagePreview(news: News) -> some View {
+        AsyncImage(url: news.thumbnail) { phase in
             switch phase {
             case .empty:
                 ProgressView()
@@ -42,11 +42,11 @@ struct ArticleRow: View {
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 
-    private func buildContent(article: Article) -> some View {
+    private func buildContent(news: News) -> some View {
         VStack(alignment: .leading) {
-            Text(article.section)
+            Text(news.section)
                 .font(.caption.weight(.heavy))
-            Text(article.title)
+            Text(news.title)
         }
     }
 }
@@ -54,7 +54,7 @@ struct ArticleRow: View {
 #if DEBUG
 struct ArticleRow_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleRow(article: DataUtils.articleExample)
+        ArticleRow(news: DataUtils.newsExample)
     }
 }
 #endif
