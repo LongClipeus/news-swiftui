@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 class HomeViewModel: ObservableObject {
 
     @Published var newsList = [News]()
@@ -20,17 +21,11 @@ class HomeViewModel: ObservableObject {
             do {
                 let result = try await newsRepository.getArticles()
                 print("fetch news: result = \(result)")
-                updateToUI(data: result)
+                self.newsList = result
             }
             catch {
                 print("fetch news: \(error.self)")
             }
-        }
-    }
-
-    private func updateToUI(data: [News]) {
-        DispatchQueue.main.async {
-            self.newsList = data
         }
     }
 }
