@@ -13,19 +13,19 @@ struct ReadingScreen: View {
     @Environment(\.openURL) var openURL
     
     /// The article they want to read.
-    let article: Article
+    let news: News
     
     var body: some View {
         ScrollView {
-            buildImageView(article.image)
-            buildContent(article)
+            buildImageView(news.image)
+            buildContent(news)
         }
-        .navigationTitle(article.section)
+        .navigationTitle(news.section)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             Button {
                 // Open this article in their preferred web browser.
-                openURL(article.url)
+                openURL(news.url)
             } label: {
                 Label("Open in your web browser", systemImage: "safari")
             }
@@ -47,26 +47,26 @@ struct ReadingScreen: View {
         }
     }
     
-    private func buildContent(_ article: Article) -> some View {
+    private func buildContent(_ news: News) -> some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text(article.title)
+            Text(news.title)
                 .font(.title)
             
-            Text(article.description)
+            Text(news.description)
                 .font(.headline)
                 .foregroundColor(.secondary)
             
             Divider()
             
             VStack(alignment: .leading) {
-                Text(article.author)
+                Text(news.author)
                     .font(.headline.weight(.heavy))
                 
-                Text(article.date.formatted(date: .abbreviated, time: .standard))
+                Text(news.date.formatted(date: .abbreviated, time: .standard))
                     .font(.headline)
             }
             
-            Text(article.text)
+            Text(news.text)
         }
         .padding(.horizontal)
     }
@@ -75,7 +75,7 @@ struct ReadingScreen: View {
 struct ReadingScreen_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ReadingScreen(article: DataUtils.articleExample)
+            ReadingScreen(news: DataUtils.newsExample)
         }
     }
 }
