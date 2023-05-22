@@ -9,12 +9,14 @@ import Foundation
 
 struct NewsDataRepository : NewsRepository {
 
+    private let urlSample = URL(string: "https://gist.githubusercontent.com/LongClipeus/e3644fb2d168283f0521d4b2c01b3811/raw/8e605394190d2b60a0acbec1c5f77f0667129c98/news.json")
+
     func getArticles() async throws -> [News] {
-        guard let url: URL = URL(string: "https://gist.githubusercontent.com/LongClipeus/e3644fb2d168283f0521d4b2c01b3811/raw/8e605394190d2b60a0acbec1c5f77f0667129c98/news.json") else {
-            return [News]()
+        guard let url: URL = urlSample else {
+            return []
         }
-        let (data, URLResponse) = try await URLSession.shared.data(from: url)
-        print("fetch URLResponse = \(URLResponse.self)")
+
+        let (data, _) = try await URLSession.shared.data(from: url)
 
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
