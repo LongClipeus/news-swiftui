@@ -5,7 +5,6 @@
 //  Created by Long Le Van on 19/05/2023.
 //
 
-
 import Foundation
 
 class FetchNewsInteractor : FetchNewsUseCase {
@@ -24,5 +23,4 @@ class FetchNewsInteractor : FetchNewsUseCase {
             return [News]()
         }
     }
-
 }

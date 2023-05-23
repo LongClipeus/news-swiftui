@@ -5,7 +5,6 @@
 //  Created by Long Le Van on 17/05/2023.
 //
 
-
 import SwiftUI
 
 struct ArticleRow: View {

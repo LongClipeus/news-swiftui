@@ -9,14 +9,16 @@
 import SwiftUI
 
 struct HomeScreen: View {
-
+    
     let newsList: [News]
-
+    
     @ObservedObject private(set) var viewModel = HomeViewModel()
-
+    
     var body: some View {
         List(viewModel.newsList, rowContent: ArticleRow.init)
-            .onAppear(perform: viewModel.fetchNews)
+            .onAppear(perform: {
+                viewModel.fetchNews()
+            })
     }
 }
 

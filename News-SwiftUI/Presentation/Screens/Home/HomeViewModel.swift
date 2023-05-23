@@ -12,7 +12,7 @@ class HomeViewModel: ObservableObject {
 
     @Published var newsList = [News]()
 
-    //private let fetchUsersUseCase: FetchNewsUseCase =
+    //private let fetchUsersUseCase: FetchNewsUseCase = FetchNewsInteractor(newsRepository: <#T##NewsRepository#>)
     private let newsRepository = NewsDataRepository()
 
     func fetchNews() {
