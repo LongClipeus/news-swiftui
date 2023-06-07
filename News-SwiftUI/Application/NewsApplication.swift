@@ -9,11 +9,18 @@ import SwiftUI
 
 @main
 struct News_SwiftUIApp: App {
+
     var body: some Scene {
         WindowGroup {
-            NavigationView{
-                HomeScreen(newsList: [DataUtils.newsExample])
-            }
+            CoreDataTestScreen()
         }
     }
+
+//    var body: some Scene {
+//        WindowGroup {
+//            NavigationView{
+//                HomeScreen()
+//            }
+//        }
+//    }
 }

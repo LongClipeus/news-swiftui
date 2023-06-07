@@ -9,9 +9,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    
-    let newsList: [News]
-    
+
     @ObservedObject private(set) var viewModel = HomeViewModel()
     
     var body: some View {
@@ -26,7 +24,7 @@ struct HomeScreen: View {
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            HomeScreen(newsList: [DataUtils.newsExample])
+            HomeScreen()
         }
     }
 }
